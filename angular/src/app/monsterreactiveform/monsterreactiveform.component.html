@@ -1,0 +1,23 @@
+<h1>Monsterlessons academy</h1>
+
+<form action="" [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+    <div>
+        <div>
+            <label>Username: </label>&nbsp;&nbsp;
+            <input type="text" formControlName="username">
+        </div><br>
+        <div>
+            <label>Email: </label>&nbsp;&nbsp;
+            <input type="text" formControlName="email">
+        </div><br>
+        <div>
+            <label >Password: </label>&nbsp;&nbsp;
+            <input type="password" formControlName="password">
+        </div>  <br>
+    
+        <div>
+            <button type="submit" class="button">Register</button>
+        </div>
+    </div>
+
+</form>
