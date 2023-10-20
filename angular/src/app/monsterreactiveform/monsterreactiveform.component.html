@@ -1,18 +1,24 @@
 <h1>Monsterlessons academy</h1>
 
-<form action="" [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
-    <div>
+<form action="" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
         <div>
             <label>Username: </label>&nbsp;&nbsp;
-            <input type="text" formControlName="username">
+            <input class="form-control" type="text" formControlName="username" 
+                [class.is-invalid]="registerForm.get('username')?.invalid && (registerForm.get('username')?.touched || isSubmitted)">
+            <span *ngIf="registerForm.get('username')?.hasError('required') && (registerForm.get('username')?.touched || isSubmitted)" class=""text-danger>This field is required</span>
         </div><br>
         <div>
             <label>Email: </label>&nbsp;&nbsp;
-            <input type="text" formControlName="email">
+            <input class="form-control" type="text" formControlName="email"
+                [class.is-invalid]="registerForm.get('email')?.invalid && (registerForm.get('email')?.touched || isSubmitted)">
+                <span *ngIf="registerForm.get('email')?.hasError('required') && (registerForm.get('email')?.touched || isSubmitted)" class=""text-danger>This field is required</span>
         </div><br>
         <div>
             <label >Password: </label>&nbsp;&nbsp;
-            <input type="password" formControlName="password">
+            <input class="form-control" type="password" formControlName="password"
+            [class.is-invalid]="registerForm.get('password')?.invalid && (registerForm.get('password')?.touched || isSubmitted)">
+            <span *ngIf="registerForm.get('password')?.hasError('required') && (registerForm.get('password')?.touched || isSubmitted)" class=""text-danger>This field is required</span>
         </div>  <br>
     
         <div>

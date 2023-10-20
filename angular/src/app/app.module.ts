@@ -7,10 +7,7 @@ import { MonsterreactiveformComponent } from './monsterreactiveform/monsterreact
 import { RouterModule, Routes } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 
-const routes: Routes = [
-  { path: '', redirectTo: '/', pathMatch: 'full' }, 
-  { path: 'monsterreactive', component: MonsterreactiveformComponent }
-];
+
 
 @NgModule({
   declarations: [
@@ -20,7 +17,6 @@ const routes: Routes = [
   imports: [
     BrowserModule,
     AppRoutingModule,
-    RouterModule.forRoot(routes),
     ReactiveFormsModule
   ],
   providers: [],

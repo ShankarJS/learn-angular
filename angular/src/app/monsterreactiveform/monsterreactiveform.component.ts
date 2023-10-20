@@ -8,16 +8,18 @@ import { FormBuilder, Validators } from '@angular/forms';
 })
 export class MonsterreactiveformComponent {
 
-  registrationForm = this.fb.group({
+  registerForm = this.fb.group({
     username: ['', Validators.required],
     password: ['', Validators.required],
     email: ['', [Validators.required, Validators.email]],
   })
+  isSubmitted = false;
   
   constructor(private fb: FormBuilder){}
 
   onSubmit(){
-    console.log("Form submitted, data is: ", this.registrationForm.value, this.registrationForm.invalid);
+    console.log("Form submitted, data is: ", this.registerForm.value, this.registerForm.invalid);
+    this.isSubmitted = true;
   }
 
 }
