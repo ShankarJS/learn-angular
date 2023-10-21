@@ -20,6 +20,12 @@
             [class.is-invalid]="registerForm.get('password')?.invalid && (registerForm.get('password')?.touched || isSubmitted)">
             <span *ngIf="registerForm.get('password')?.hasError('required') && (registerForm.get('password')?.touched || isSubmitted)" class=""text-danger>This field is required</span>
         </div>  <br>
+
+        <div>
+            <select formControlName="roleId">
+                <option *ngFor="let role of roles" [ngValue]="role.id">{{ role.title }}</option>
+            </select>
+        </div> <br>
     
         <div>
             <button type="submit" class="button">Register</button>
